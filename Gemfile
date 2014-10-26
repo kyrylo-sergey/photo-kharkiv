@@ -4,7 +4,6 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'devise'
-gem 'leaflet-rails'
 gem 'pry'
 gem 'pg'
 
