@@ -1,8 +1,8 @@
-.widescreen-map-container {
-    position: relative;
-    left: -34%;
-    width: 168%;
-    margin-top: -15px;
-    overflow: hidden;
-    height: 100%
+html, body, #map {
+    height: 100%;
+}
+
+.navbar {
+    margin-bottom: 0;
+    box-shadow: 1px 1px 3px #5f5f5f;
 }

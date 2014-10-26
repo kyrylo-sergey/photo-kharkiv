@@ -28,9 +28,12 @@
             <li><%= link_to('Зарегистрироваться', new_user_registration_path) %></li>
             <% end %>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>
+    <% if current_page?(root_path) %>
+    <%= yield %>
+    <% else %>
     <div class="container">
       <div>
         <div class="notice"><%= notice %></div>
@@ -38,5 +41,6 @@
       </div>
       <%= yield %>
     </div>
+    <% end %>
   </body>
 </html>
