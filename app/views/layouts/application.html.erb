@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Фото Харьков</a>
@@ -30,8 +30,10 @@
       </div>
     </div>
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <div>
+        <div class="notice"><%= notice %></div>
+        <div class="alert"><%= alert %></div>
+      </div>
       <%= yield %>
     </div>
     <div class="footer">
