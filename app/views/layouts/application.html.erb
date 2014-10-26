@@ -10,8 +10,16 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-
+    <div class="container">
+	<div class="page-header">
+            <h1>Bla bla</h1>
+	</div>
+	<%= yield %>
+    </div>
+    <div class="footer">
+	<div class="container">
+            <p class="text-muted">Place sticky footer content here.</p>
+	</div>
+    </div>
   </body>
 </html>
