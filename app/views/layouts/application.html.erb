@@ -13,10 +13,15 @@
 		  <a class="navbar-brand" href="/">Фото Харьков</a>
               </div>
               <div class="collapse navbar-collapse">
-		  <ul class="nav navbar-nav">
-		      <li><a href="#">Вход</a></li>
-		      <li><a href="#about">Регистрация</a></li>
-		  </ul>
+                <ul class="nav navbar-nav">
+		<% if user_signed_in? %>
+		  <li>
+                    <%= link_to('Выйти', destroy_user_session_path, method: :delete) %>
+		  </li>
+		<% else %>
+		  <li><%= link_to('Войти на сайт', new_user_session_path)  %></li>
+                <% end %>
+                </ul>
               </div><!--/.nav-collapse -->
 	  </div>
       </div>
