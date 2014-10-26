@@ -1,0 +1,8 @@
+.widescreen-map-container {
+    position: relative;
+    left: -34%;
+    width: 168%;
+    margin-top: -15px;
+    overflow: hidden;
+    height: 100%
+}
