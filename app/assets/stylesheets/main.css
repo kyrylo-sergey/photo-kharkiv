@@ -1,8 +1,16 @@
-html, body, #map {
+html, body {
     height: 100%;
 }
 
 .navbar {
     margin-bottom: 0;
     box-shadow: 1px 1px 3px #5f5f5f;
+}
+
+#map {
+    min-width: 100%;
+    width: 100%;
+    top: 50px;
+    bottom: 0;
+    position: absolute;
 }
