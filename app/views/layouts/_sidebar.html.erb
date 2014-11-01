@@ -7,13 +7,16 @@
     <div class="sidebar-pane" id="profile">
       <h1>Загрузка фотографии</h1>
       <%= form_for @photo, :html => {:multipart => true} do |f| %>
-      <p>
-        <label>Выберете ваше фото и место на карте</label>
-        <%= f.file_field :image %>
-	<%= f.hidden_field :latitude %>
-	<%= f.hidden_field :longitude %>
-        <%= f.submit %>
-      </p>
+	<p>
+          <label>Выберите ваше фото и место на карте</label>
+          <%= f.file_field :image %>
+	  <%= f.hidden_field :latitude %>
+	  <%= f.hidden_field :longitude %>
+          <%= f.submit "Загрузить",
+              id: 'upload-photo',
+              disabled: true,
+              class: "btn btn-primary" %>
+	</p>
       <% end %>
     </div>
   </div>

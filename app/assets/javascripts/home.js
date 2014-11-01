@@ -8,6 +8,14 @@ $(function(){
       && $('#sidebar').find('#profile').hasClass('active');
   }
 
+  function tryEnableUpload() {
+    if (edit_mode_marker && $('#photo_image').val() !== '') {
+      $('#upload-photo').prop('disabled', false);
+    } else {
+      $('#upload-photo').prop('disabled', true);
+    }
+  }
+
   if ($('#map').length) {
     map = L.map('map');
     map.setView([50.0139, 36.2253], 14);
@@ -33,6 +41,8 @@ $(function(){
 	}
 	$('#photo_latitude').val(e.latlng.lat);
 	$('#photo_longitude').val(e.latlng.lng);
+
+        tryEnableUpload();
       }
     });
   }
@@ -47,4 +57,6 @@ $(function(){
       .addTo(map)
       .bindPopup('<img src="' + marker.image.url + '"/>');
   });
+
+  $("#photo_image").change(tryEnableUpload);
 });
