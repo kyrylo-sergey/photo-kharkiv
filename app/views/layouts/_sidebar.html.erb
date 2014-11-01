@@ -9,7 +9,7 @@
       <%= form_for @photo, :html => {:multipart => true} do |f| %>
       <p>
         <label>My Avatar</label>
-        <%= f.file_field :url %>
+        <%= f.file_field :image %>
         <%= f.submit %>
       </p>
       <% end %>
