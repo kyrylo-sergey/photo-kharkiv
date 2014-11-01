@@ -29,11 +29,8 @@ $(function(){
 
   map.on('click', function(e){
     if(isEditMode()) {
-      if(edit_mode_marker) {
-	edit_mode_marker.setLatLng(e.latlng);
-      } else {
-	edit_mode_marker = L.marker(e.latlng);
-	edit_mode_marker.addTo(map);
+      if(!edit_mode_marker){
+	edit_mode_marker = L.marker(e.latlng).addTo(map);
       }
       $('#photo_latitude').val(e.latlng.lat);
       $('#photo_longitude').val(e.latlng.lng);
@@ -57,7 +54,8 @@ $(function(){
 
   $('#upload-dialog').click(function() {
     if (!isEditMode() && edit_mode_marker) {
-      edit_mode_marker.setLatLng([0, 0]);
+      map.removeLayer(edit_mode_marker);
+      edit_mode_marker = null;
     }
   });
 });
