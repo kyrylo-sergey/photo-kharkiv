@@ -22,3 +22,9 @@ html, body {
 #markers {
     display: none;
 }
+
+#flash-container {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+}
