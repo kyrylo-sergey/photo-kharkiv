@@ -13,17 +13,19 @@ $(function(){
 
     $(window).resize(map.invalidateSize);
 
-    sidebar = L.control.sidebar('sidebar').addTo(map);
-
-    $('#markers').data().markers.forEach(function(marker) {
-      var photoThumb = L.icon({
-        iconUrl: marker.image.url,
-        iconSize: [40, 40]
-      });
-
-      L.marker([marker.latitude, marker.longitude], {icon: photoThumb})
-        .addTo(map)
-        .bindPopup('<img src="' + marker.image.url + '"/>');
-    });
+    if ($('#sidebar').length) {
+      sidebar = L.control.sidebar('sidebar').addTo(map);
+    }
   }
+
+  $('#markers').data().markers.forEach(function(marker) {
+    var photoThumb = L.icon({
+      iconUrl: marker.image.url,
+      iconSize: [40, 40]
+    });
+
+    L.marker([marker.latitude, marker.longitude], {icon: photoThumb})
+      .addTo(map)
+      .bindPopup('<img src="' + marker.image.url + '"/>');
+  });
 });
