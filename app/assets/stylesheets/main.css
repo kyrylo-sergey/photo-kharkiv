@@ -14,3 +14,7 @@ html, body {
     bottom: 0;
     position: absolute;
 }
+
+.sidebar {
+    top: 125px;
+}

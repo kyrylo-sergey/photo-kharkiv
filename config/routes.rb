@@ -56,4 +56,5 @@ Rails.application.routes.draw do
   #   end
 
   resources :users
+  post 'photos' => 'photos#upload'
 end

@@ -12,5 +12,7 @@ $(function(){
     }).addTo(map);
 
     $(window).resize(map.invalidateSize);
+
+    var sidebar = L.control.sidebar('sidebar').addTo(map);
   }
 });
