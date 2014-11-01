@@ -8,8 +8,10 @@
       <h1>Загрузка фотографии</h1>
       <%= form_for @photo, :html => {:multipart => true} do |f| %>
       <p>
-        <label>My Avatar</label>
+        <label>Выберете ваше фото и место на карте</label>
         <%= f.file_field :image %>
+	<%= f.hidden_field :latitude %>
+	<%= f.hidden_field :longitude %>
         <%= f.submit %>
       </p>
       <% end %>
