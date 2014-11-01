@@ -2,7 +2,7 @@
 $(function(){
   var map, sidebar, edit_mode_marker;
 
-  function is_edit_mode(){
+  function isEditMode() {
     return !$('#sidebar').hasClass('collapsed')
       && $('#sidebar').find('#profile').hasClass('active');
   }
@@ -28,7 +28,7 @@ $(function(){
   sidebar = L.control.sidebar('sidebar').addTo(map);
 
   map.on('click', function(e){
-    if(is_edit_mode()) {
+    if(isEditMode()) {
       if(edit_mode_marker) {
 	edit_mode_marker.setLatLng(e.latlng);
       } else {
@@ -54,4 +54,10 @@ $(function(){
   });
 
   $("#photo_image").change(tryEnableUpload);
+
+  $('#upload-dialog').click(function() {
+    if (!isEditMode() && edit_mode_marker) {
+      edit_mode_marker.setLatLng([0, 0]);
+    }
+  });
 });
