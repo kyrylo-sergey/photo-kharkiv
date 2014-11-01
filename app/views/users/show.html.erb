@@ -1,10 +1,10 @@
 <h1>Профиль пользователя <%= current_user.name %></h1>
 
 <% if @user.recent_photos.length %>
-  <h3>Недавняя активность</h3>
   <% @user.recent_photos.each do |p| %>
+    <h3>Недавняя активность</h3>
     <div class"user-activity">
-	<p><%= p.created_at %> загрузил фото</p>
+      <p><%= p.created_at %> загрузил фото</p>
       <%= image_tag p.image %>
     </div>
   <% end %>
