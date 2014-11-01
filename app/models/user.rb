@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :photos
+
+  def recent_photos
+    photos.take(5)
+  end
 end
