@@ -18,3 +18,7 @@ html, body {
 .sidebar {
     top: 125px;
 }
+
+#markers {
+    display: none;
+}
