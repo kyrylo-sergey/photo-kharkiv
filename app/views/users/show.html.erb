@@ -4,8 +4,8 @@
   <h3>Недавняя активность</h3>
   <% @user.recent_photos.each do |p| %>
     <div class"user-activity">
-      <p><%= p.created_at %> загрузил фото</p>
-      <%= image_tag p.image.url %>
+	<p><%= p.created_at %> загрузил фото</p>
+      <%= image_tag p.image %>
     </div>
   <% end %>
 <% end %>
