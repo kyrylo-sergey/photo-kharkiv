@@ -1,10 +1,10 @@
 <div id="sidebar" class="sidebar collapsed">
   <ul class="sidebar-tabs" role="tablist">
-    <li><a href="#profile" role="tab" id="upload-dialog"><i class="fa fa-upload"></i></a></li>
+    <li><a href="#upload" role="tab" id="upload-button"><i class="fa fa-upload"></i></a></li>
   </ul>
 
   <div class="sidebar-content active">
-    <div class="sidebar-pane" id="profile">
+    <div class="sidebar-pane" id="upload">
       <h1>Загрузка фотографии</h1>
       <%= form_for @photo, :html => {:multipart => true} do |f| %>
       <p>
