@@ -16,6 +16,7 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'pg'
 gem 'carrierwave'
+gem 'requirejs-rails'
 
 group :development do
   gem 'pry'
