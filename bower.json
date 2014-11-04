@@ -8,7 +8,8 @@
     "name": "bower-rails generated vendor assets",
     "dependencies": {
       "leaflet-0.7.3": "http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.3.zip",
-      "sidebar-v2": ">= 0.2.0"
+      "sidebar-v2": ">= 0.2.0",
+      "requirejs-domready": "latest"
     }
   }
 }
