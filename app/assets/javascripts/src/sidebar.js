@@ -1,11 +1,7 @@
 /*global define, require, Event*/
 /*jslint browser: true*/
-define(['leaflet', './upload_form', 'leafletSidebar'], function(L, UploadForm) {
-  var map;
-
-  var sidebar = L.control.sidebar('sidebar'),
-      editBtn = document.querySelector('#sidebar #upload-button'),
-      uploadForm = UploadForm.init();
+define(['leaflet', 'leafletSidebar', './upload_form'], function(L, LS, UploadForm) {
+  var map, sidebar;
 
   function toggleEditMode() {
     var mapCont = map.getContainer();
@@ -19,6 +15,7 @@ define(['leaflet', './upload_form', 'leafletSidebar'], function(L, UploadForm) {
   }
 
   function bindEvents() {
+    var editBtn = document.querySelector('#sidebar #upload-button');
     editBtn.onclick = toggleEditMode.bind(this);
   }
 
@@ -27,19 +24,18 @@ define(['leaflet', './upload_form', 'leafletSidebar'], function(L, UploadForm) {
       collapsed: true
     },
 
-    init: function() {
+    init: function(leafletMap) {
+      map = leafletMap;
+      sidebar = L.control.sidebar('sidebar');
       bindEvents.apply(this);
+      UploadForm.init();
+      sidebar.addTo(map);
       return this;
     },
 
-    addTo: function(leafletMap) {
-      map = leafletMap;
-      sidebar.addTo(map);
-    },
-
     updateFormFields: function(latlng) {
-      uploadForm.setLatitude(latlng.lat);
-      uploadForm.setLongitude(latlng.lng);
+      UploadForm.setLatitude(latlng.lat);
+      UploadForm.setLongitude(latlng.lng);
     }
   };
 });

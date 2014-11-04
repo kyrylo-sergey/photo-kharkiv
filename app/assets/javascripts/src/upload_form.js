@@ -1,11 +1,7 @@
 /*global define*/
 /*jslint browser: true*/
 define(function() {
-  var formElement = document.querySelector('#new_photo'),
-      imgField = formElement.querySelector('#photo_image'),
-      latField = formElement.querySelector('#photo_latitude'),
-      lngField = formElement.querySelector('#photo_longitude'),
-      submitBtn = formElement.querySelector('#upload-photo');
+  var formElement, querySelector, latField, lngField, submitBtn;
 
   function isFilled() {
     return latField.value !== '' && lngField.value !== '' &&
@@ -26,9 +22,13 @@ define(function() {
 
   return {
     init: function() {
+      formElement = document.querySelector('#new_photo'),
+      imgField = formElement.querySelector('#photo_image'),
+      latField = formElement.querySelector('#photo_latitude'),
+      lngField = formElement.querySelector('#photo_longitude'),
+      submitBtn = formElement.querySelector('#upload-photo');
       submitBtn.disabled = true;
       bindEvents();
-
       return this;
     },
 

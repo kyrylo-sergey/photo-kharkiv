@@ -1,3 +1,4 @@
+<%= javascript_include_tag "sidebar"%>
 <div id="sidebar" class="sidebar collapsed">
   <ul class="sidebar-tabs" role="tablist">
     <li><a href="#upload" role="tab" id="upload-button"><i class="fa fa-upload"></i></a></li>
@@ -10,8 +11,8 @@
       <p>
         <label>Выберите ваше фото и место на карте</label>
         <%= f.file_field :image %>
-	<%= f.hidden_field :latitude %>
-	<%= f.hidden_field :longitude %>
+        <%= f.hidden_field :latitude %>
+        <%= f.hidden_field :longitude %>
         <%= f.submit "Загрузить",
             id: 'upload-photo',
             disabled: true,

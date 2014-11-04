@@ -6,7 +6,6 @@ define([
   './photo_collection'
 ], function(L, Sidebar, PhotoCollection) {
   var map = L.map('map'),
-      sidebar = Sidebar.init(),
       layerStyle = 'http://tile.osm.org/{z}/{x}/{y}.png';
 
   function startEditing() {
@@ -21,7 +20,7 @@ define([
       }
 
       that.editMarker.setLatLng(event.latlng).update().addTo(map);
-      sidebar.updateFormFields(event.latlng);
+      Sidebar.updateFormFields(event.latlng);
     };
 
     map.on('click', moveMarker);
@@ -48,8 +47,9 @@ define([
       editing: false
     },
 
+    instance: map,
+
     init: function(args) {
-      sidebar.addTo(map);
 
       map.setView([args.lat, args.lng], args.zoomLvl);
       L.tileLayer(layerStyle, {maxZoom: 18}).addTo(map);
