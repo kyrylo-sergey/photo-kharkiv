@@ -1,0 +1,3 @@
+paths:
+  leaflet: 'leaflet-0.7.3/leaflet-src'
+  leafletSidebar: 'sidebar-v2/js/leaflet-sidebar'
