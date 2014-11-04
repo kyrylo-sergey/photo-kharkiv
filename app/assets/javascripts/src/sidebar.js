@@ -1,6 +1,6 @@
 /*global define, require, Event*/
 /*jslint browser: true*/
-define(['leaflet', './upload_form'], function(L, UploadForm) {
+define(['leaflet', './upload_form', 'leafletSidebar'], function(L, UploadForm) {
   var map, sidebar;
 
   function toggleEditMode() {
